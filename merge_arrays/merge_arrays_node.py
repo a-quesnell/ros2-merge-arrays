@@ -17,7 +17,7 @@ class MergeArraysNode(Node):
         self.subscription1 = self.create_subscription(Int32MultiArray, "/input/array1", self.arr1_callback, 10)
         self.subscription2 = self.create_subscription(Int32MultiArray, "/input/array2", self.arr2_callback, 10)
         # creates publisher that will receive the merged array
-        self.publisher = self.create_publisher(Int32MultiArray, "/output/merged_array", 10)    
+        self.publisher = self.create_publisher(Int32MultiArray, "/output/array", 10)    
 
     # when /input/array1 sends an array, assign array1 and see if its ready to be merged and published
     def arr1_callback(self, msg: Int32MultiArray): 
